@@ -22,6 +22,10 @@
 @implementation ASPopover
 
 #define keyWindow [UIApplication sharedApplication].delegate.window
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.contentView.frame = CGRectMake(0, 0, CGRectGetWidth(self.contentView.frame), CGRectGetHeight(self.contentView.frame));
+}
 
 - (instancetype)init {
   if (self = [super init]) {
